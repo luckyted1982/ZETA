@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局自定义样式 */
+@layer base {
+  body {
+    @apply bg-background text-gray-800 antialiased;
+  }
+
+  /* 滑块样式 */
+  input[type="range"] {
+    @apply w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 bg-accent rounded-full shadow-md cursor-pointer transition-transform;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    @apply scale-110;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    @apply w-5 h-5 bg-accent rounded-full shadow-md cursor-pointer border-0;
+  }
+}
+
+@layer components {
+  /* 页面切换动画 */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 卡片悬浮效果 */
+  .card-hover {
+    @apply transition-shadow duration-300;
+  }
+
+  .card-hover:hover {
+    @apply shadow-card-hover;
+  }
+
+  /* 按钮主样式 */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-semibold shadow-lg transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply shadow-xl scale-105;
+  }
+
+  /* 评分等级颜色 */
+  .grade-s { @apply text-green-600 bg-green-50 border-green-200; }
+  .grade-a { @apply text-blue-600 bg-blue-50 border-blue-200; }
+  .grade-b { @apply text-accent bg-amber-50 border-amber-200; }
+  .grade-c { @apply text-orange-600 bg-orange-50 border-orange-200; }
+  .grade-d { @apply text-red-600 bg-red-50 border-red-200; }
+}
+
+/* Markdown渲染样式 */
+.markdown-body h1 { @apply text-2xl font-bold mb-4 text-gray-900; }
+.markdown-body h2 { @apply text-xl font-bold mb-3 mt-6 text-gray-800; }
+.markdown-body h3 { @apply text-lg font-semibold mb-2 mt-4 text-gray-800; }
+.markdown-body p { @apply mb-3 leading-relaxed text-gray-700; }
+.markdown-body ul { @apply list-disc list-inside mb-3 ml-4; }
+.markdown-body ol { @apply list-decimal list-inside mb-3 ml-4; }
+.markdown-body li { @apply mb-1 text-gray-700; }
+.markdown-body strong { @apply font-semibold text-gray-900; }
+.markdown-body blockquote { @apply border-l-4 border-primary pl-4 italic text-gray-600 my-4; }
+.markdown-body code { @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono; }
+.markdown-body pre { @apply bg-gray-100 p-4 rounded-lg overflow-x-auto my-4; }
+
+/* 加载动画 */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+.loading-pulse {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+/* 雷达图绘制动画 */
+@keyframes drawRadar {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+.radar-animate {
+  stroke-dasharray: 1000;
+  animation: drawRadar 1.5s ease-out forwards;
+}
+
+/* 数字递增动画 */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.count-up {
+  animation: countUp 0.5s ease-out;
+}

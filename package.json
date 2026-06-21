@@ -1,0 +1,13 @@
+{
+  "name": "ai-evaluation-platform",
+  "version": "1.0.0",
+  "description": "AI-driven Science & Innovation Enterprise Evaluation System",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && uvicorn main:app --reload --port 8001",
+    "frontend": "cd frontend && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

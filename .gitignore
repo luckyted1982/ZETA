@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environments
+.env
+.env.local
+.env.development
+.env.production
+.venv/
+venv/
+
+# Build outputs
+frontend/dist/
+frontend/build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Database (optional - for demo data)
+# backend/data/evaluation.db
+
+# Large extracted files
+extracted_full.txt
+extracted_text.txt
+extraction_report.md
+parsed_companies.json
+
+# Research files
+research/
